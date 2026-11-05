@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/common/Icon";
 
 const isActiveLink = (pathname: string, href: string) =>
-  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+  href === "/" ? pathname === "/" : href === "/economy" && pathname.startsWith("/economy/gdp") ? false : pathname === href || pathname.startsWith(`${href}/`);
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -19,20 +19,21 @@ export const Header: React.FC = () => {
   const navLinks: { href: string; label: string; icon: IconName }[] = [
     { href: "/", label: "Tổng quan", icon: "sparkles" },
     { href: "/economy", label: "Kinh tế", icon: "compass" },
+    { href: "/economy/gdp", label: "Tăng trưởng GDP", icon: "compass" },
   ];
 
   return (
     <header className="sticky top-0 z-40 bg-paper-50/90 backdrop-blur-md border-b border-paper-300/40">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Logo mang phong cách ấn triện cổ điển */}
+        {/* Logo biểu đồ cột tăng trưởng */}
         <Link prefetch={false} href="/" className="flex items-center gap-3 group">
           <Icon name="logo" className="w-9 h-9 rounded-xl shadow-sm font-serif transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="font-serif font-bold text-base sm:text-lg text-paper-900 tracking-tight leading-none group-hover:text-crimson transition-colors">
-              Kinh Tế Niên Biểu
+              Nhịp Kinh Tế
             </span>
             <span className="hidden sm:block text-[10px] font-sans uppercase tracking-widest text-paper-800/60 mt-0.5">
-              Economic Timeline
+              Economic Pulse
             </span>
           </div>
         </Link>

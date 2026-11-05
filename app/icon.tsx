@@ -1,13 +1,9 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 
-export const runtime = "nodejs";
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
-export default async function Icon() {
-  const font = await readFile(join(process.cwd(), "assets/fonts/BeVietnamPro-700.ttf"));
+export default function Icon() {
   return new ImageResponse(
     (
       <div
@@ -19,15 +15,17 @@ export default async function Icon() {
           justifyContent: "center",
           background: "#9B1C1C",
           color: "#FAF7F2",
-          fontSize: 40,
-          fontWeight: 700,
           borderRadius: 14,
-          fontFamily: "Be Vietnam Pro",
         }}
       >
-        Sử
+        <svg width="44" height="44" viewBox="0 0 36 36">
+          <rect x="4" y="21" width="7" height="11" rx="1.5" fill="#FAF7F2" fillOpacity="0.6" />
+          <rect x="14.5" y="15" width="7" height="17" rx="1.5" fill="#FAF7F2" fillOpacity="0.8" />
+          <rect x="25" y="8" width="7" height="24" rx="1.5" fill="#FAF7F2" />
+          <path d="M5 13l9-6 6 4 11-8" fill="none" stroke="#FAF7F2" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
     ),
-    { ...size, fonts: [{ name: "Be Vietnam Pro", data: font, weight: 700, style: "normal" }] }
+    size
   );
 }

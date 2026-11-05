@@ -61,7 +61,7 @@ export default function RootLayout({
         <footer className="border-t border-paper-300/40 py-8 bg-paper-100/50 text-center text-xs font-sans text-paper-800/60">
           <div className="max-w-8xl mx-auto px-4 space-y-2">
             <p className="font-serif font-medium text-paper-900">
-              Kinh Tế Niên Biểu — Kinh tế Việt Nam và thế giới theo mốc thời gian
+              Nhịp Kinh Tế — Kinh tế Việt Nam và thế giới theo từng mốc năm
             </p>
             <p>
               Dữ liệu nội dung mở được trích xuất và chuẩn hóa từ Wikipedia tiếng Việt (giấy phép CC BY-SA 4.0).

@@ -1,4 +1,4 @@
-# Kinh Tế Niên Biểu (Vietnam Economic Timeline)
+# Nhịp Kinh Tế (Vietnam Economic Pulse)
 
 Ứng dụng web hiện đại, tối giản và chuyên nghiệp để đối chiếu kinh tế Việt Nam và thế giới (trang `/economy`, 1986–2026), khai thác dữ liệu mở và tư liệu tham khảo từ Wikipedia tiếng Việt (`vi.wikipedia.org`).
 

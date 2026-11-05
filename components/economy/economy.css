@@ -580,3 +580,54 @@
     grid-template-columns: 1fr;
   }
 }
+
+.eco-chart {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+.eco-chart h1 {
+  font-size: 1.8rem;
+  margin: 0 0 4px;
+}
+.eco-chart-sub,
+.eco-chart-note {
+  color: var(--mute);
+  font-size: 0.875rem;
+  margin: 0 0 12px;
+}
+.eco-chart-box {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+}
+.eco-chart-box {
+  height: 380px;
+}
+
+.eco-gdp-link {
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+.eco-gdp-link a {
+  color: var(--vn);
+  font-weight: 600;
+}
+.eco-gdp-link a:hover {
+  text-decoration: underline;
+}
+.eco-chart-page {
+  padding-top: 32px;
+}
+.eco-chart-page h1 {
+  font-size: 1.8rem;
+  margin: 0 0 4px;
+}
+.eco-back {
+  color: var(--mute);
+  font-size: 0.875rem;
+}
+.eco-back:hover {
+  color: var(--vn);
+}

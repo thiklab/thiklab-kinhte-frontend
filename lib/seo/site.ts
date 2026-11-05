@@ -1,4 +1,4 @@
-export const SITE_NAME = "Kinh Tế Niên Biểu";
+export const SITE_NAME = "Nhịp Kinh Tế";
 
 export const SITE_DESCRIPTION =
   "Đối chiếu kinh tế Việt Nam với thế giới theo từng mốc năm từ Đổi Mới 1986 đến nay, kèm tư liệu tham khảo từ Wikipedia tiếng Việt.";

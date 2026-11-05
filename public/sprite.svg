@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg">
   <symbol id="logo" viewBox="0 0 36 36">
     <rect width="36" height="36" rx="10" fill="#8F1D1D"/>
-    <text x="18" y="25" text-anchor="middle" font-size="18" font-weight="700" fill="#FAF7F2" font-family="inherit">Sử</text>
+    <rect x="7" y="21" width="5" height="8" rx="1.2" fill="#FAF7F2" fill-opacity=".6"/>
+    <rect x="15.5" y="16" width="5" height="13" rx="1.2" fill="#FAF7F2" fill-opacity=".8"/>
+    <rect x="24" y="11" width="5" height="18" rx="1.2" fill="#FAF7F2"/>
+    <path d="M7 15l8-5 5 3 9-7" fill="none" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
   <symbol id="sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></symbol>
   <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></symbol>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       "Theo dõi các mốc phát triển kinh tế Việt Nam và so sánh với thế giới, kèm tư liệu tham khảo từ Wikipedia tiếng Việt.",
     path: "/",
   }),
-  title: { absolute: "Kinh Tế Niên Biểu — Kinh tế Việt Nam so sánh với thế giới" },
+  title: { absolute: "Nhịp Kinh Tế — Kinh tế Việt Nam so sánh với thế giới" },
 };
 
 export default function HomePage() {
@@ -47,10 +47,10 @@ export default function HomePage() {
 
       <section className="py-10 sm:py-12 px-4 sm:px-6 max-w-3xl mx-auto" aria-labelledby="gioi-thieu">
         <h2 id="gioi-thieu" className="text-2xl font-serif text-paper-900 mb-4">
-          Kinh Tế Niên Biểu dùng để làm gì?
+          Nhịp Kinh Tế dùng để làm gì?
         </h2>
         <p className="font-serif text-paper-800/90 leading-relaxed">
-          Kinh Tế Niên Biểu giúp theo dõi các mốc phát triển kinh tế Việt Nam và so sánh với thế giới từ năm 1986 đến nay.
+          Nhịp Kinh Tế giúp theo dõi các mốc phát triển kinh tế Việt Nam và so sánh với thế giới từ năm 1986 đến nay.
           Khám phá dữ liệu kinh tế qua <Link prefetch={false} className="text-crimson underline" href="/economy">trang đối chiếu kinh tế</Link>.
         </p>
       </section>

@@ -48,6 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/"), lastModified: base, changeFrequency: "monthly", priority: 1 },
     { url: absoluteUrl("/pathways"), lastModified: base, changeFrequency: "monthly", priority: 0.8 },
     { url: absoluteUrl("/economy"), lastModified: base, changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/economy/gdp"), lastModified: base, changeFrequency: "monthly", priority: 0.6 },
     ...ECO_E.map((event) => ({
       url: absoluteUrl(economyEventHref(event)),
       lastModified: base,

@@ -229,6 +229,10 @@ export function EconomyTimeline() {
         </div>
       </main>
 
+      <div className="in eco-gdp-link">
+        <Link href="/economy/gdp">Xem biểu đồ tăng trưởng GDP: Việt Nam so với Trung Quốc và Mỹ →</Link>
+      </div>
+
       <footer className="eco-ft">
         Số liệu 2025–2026 là số sơ bộ (Cục Thống kê, Trading Economics); cần đối chiếu nguồn chính thức trước khi trích
         dẫn. Phần “Đọc đối chiếu” là nhận định tóm lược, không phải số liệu thống kê.
