@@ -37,6 +37,25 @@
   overflow-x: auto;
 }
 
+/* Khối ảnh/bảng của Wikipedia có width cố định inline, ép về vừa khung để không tràn ngang trên mobile */
+.prose-editorial [style*="width"],
+.prose-editorial .thumbinner,
+.prose-editorial .trow,
+.prose-editorial .theader {
+  max-width: 100% !important;
+}
+
+.prose-editorial .thumbinner,
+.prose-editorial .multiimageinner {
+  width: auto !important;
+}
+
+.prose-editorial .trow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .prose-editorial figure {
   max-width: 100%;
   margin: 1.5rem auto;

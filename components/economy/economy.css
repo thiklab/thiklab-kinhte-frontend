@@ -444,6 +444,7 @@
 }
 
 .eco-detail-article {
+  min-width: 0;
   padding: clamp(20px, 4vw, 36px);
   font-size: 16px;
   line-height: 1.85;
@@ -604,6 +605,24 @@
 }
 .eco-chart-box {
   height: 380px;
+}
+
+@media (max-width: 640px) {
+  .eco-chart {
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+  .eco-chart h1 {
+    font-size: 1.4rem;
+  }
+  .eco-chart-box {
+    height: 300px;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .eco .card {
+    padding: 14px;
+  }
 }
 
 .eco-gdp-link {

@@ -6,9 +6,9 @@ import { breadcrumbLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/meta";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Tăng trưởng GDP: Việt Nam so với Trung Quốc và Mỹ (1986–2025)",
+  title: "Tăng trưởng GDP: Việt Nam so với Trung Quốc, Mỹ và Thái Lan (1986–2025)",
   description:
-    "Biểu đồ so sánh tốc độ tăng GDP thực hằng năm của Việt Nam, Trung Quốc và Mỹ từ năm 1986 đến nay.",
+    "Biểu đồ so sánh tốc độ tăng GDP thực hằng năm của Việt Nam, Trung Quốc, Mỹ và Thái Lan từ năm 1986 đến nay.",
   path: "/economy/gdp",
 });
 

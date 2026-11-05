@@ -230,7 +230,7 @@ export function EconomyTimeline() {
       </main>
 
       <div className="in eco-gdp-link">
-        <Link href="/economy/gdp">Xem biểu đồ tăng trưởng GDP: Việt Nam so với Trung Quốc và Mỹ →</Link>
+        <Link href="/economy/gdp">Xem biểu đồ tăng trưởng GDP: Việt Nam so với Trung Quốc, Mỹ và Thái Lan →</Link>
       </div>
 
       <footer className="eco-ft">

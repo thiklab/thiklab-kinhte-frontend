@@ -53,7 +53,7 @@ export function GdpGrowthChart() {
         scales: {
           x: { grid: { display: false }, ticks: { maxTicksLimit: 9, maxRotation: 0 } },
           y: {
-            min: -4,
+            min: -12,
             max: 16,
             ticks: { stepSize: 4, callback: (v) => `${v}%` },
             grid: { color: "#e3dccf" },
@@ -66,7 +66,7 @@ export function GdpGrowthChart() {
 
   return (
     <section className="eco-chart in" aria-labelledby="gdp-chart-title">
-      <h1 id="gdp-chart-title">Tăng trưởng GDP: Việt Nam so với Trung Quốc và Mỹ</h1>
+      <h1 id="gdp-chart-title">Tăng trưởng GDP: Việt Nam so với Trung Quốc, Mỹ và Thái Lan</h1>
       <p className="eco-chart-sub">
         Tốc độ tăng GDP thực hằng năm, {GDP_START}–{END} (%). Nhấn vào tên nước để ẩn/hiện đường.
       </p>
@@ -74,7 +74,7 @@ export function GdpGrowthChart() {
         <canvas
           ref={canvas}
           role="img"
-          aria-label="Biểu đồ đường tăng trưởng GDP của Việt Nam, Trung Quốc và Mỹ"
+          aria-label="Biểu đồ đường tăng trưởng GDP của Việt Nam, Trung Quốc, Mỹ và Thái Lan"
         />
       </div>
       <p className="eco-chart-note">
