@@ -1,19 +1,19 @@
-# Sử Việt Niên Biểu (Vietnam History Explorer)
+# Kinh Tế Niên Biểu (Vietnam Economic Timeline)
 
-Ứng dụng web hiện đại, tối giản và chuyên nghiệp để khám phá và đối chiếu Lịch sử Việt Nam, khai thác nguồn dữ liệu mở từ Wikipedia tiếng Việt (`vi.wikipedia.org`).
+Ứng dụng web hiện đại, tối giản và chuyên nghiệp để đối chiếu kinh tế Việt Nam và thế giới (trang `/economy`, 1986–2026), khai thác dữ liệu mở và tư liệu tham khảo từ Wikipedia tiếng Việt (`vi.wikipedia.org`).
 
 ---
 
 ## 🏛️ Triết lý Thiết kế: Editorial / Warm Paper
 - **Bảng màu Warm Paper:** Màu giấy dó dịu mắt (`#FAF7F2`), viền giấy cũ thanh mảnh (`#D4C5A9`), điểm xuyết màu mực nho (`#1E1917`), đỏ son ấn triện (`#8F1D1D`) và đồng cổ (`#966A38`).
-- **Typography:** Font Serif cổ điển (`Lora`) đem lại trải nghiệm đọc sách lịch sử trang trọng, tĩnh lặng và không gây mỏi mắt.
+- **Typography:** Font Serif cổ điển (`Lora`) đem lại trải nghiệm đọc trang trọng, tĩnh lặng và không gây mỏi mắt.
 
 ---
 
 ## ⚡ Các Tính Năng Nổi Bật
 
 ### 1. Tam Trục Niên Biểu (Parallel Timeline Matrix)
-- Đối chiếu song song 3 luồng lịch sử trong cùng một mốc năm:
+- Đối chiếu song song 3 bối cảnh trong cùng một mốc năm:
   1. **Đại Việt / Việt Nam:** Triều đại, danh tướng, các trận quyết chiến chiến lược.
   2. **Phương Bắc / Trung Hoa:** Triều đại phong kiến đương thời, biến động chính trị.
   3. **Thế giới:** Châu Âu, Châu Mỹ và các bước ngoặt toàn cầu.
@@ -41,13 +41,13 @@
 
 Dự án được lưu tại:
 ```text
-/Users/tuannguyen/Documents/projects/thiklab/suviet
+/Users/tuannguyen/Documents/projects/thiklab/kinhte
 ```
 
 ### Bước 1: Mở thư mục dự án trong Terminal
 
 ```bash
-cd /Users/tuannguyen/Documents/projects/thiklab/suviet
+cd /Users/tuannguyen/Documents/projects/thiklab/kinhte
 ```
 
 ### Bước 2: Cài đặt các gói phụ thuộc
@@ -73,7 +73,7 @@ Mở trình duyệt và truy cập: [http://localhost:3000](http://localhost:300
 ## 📂 Cấu trúc Thư mục
 
 ```text
-suviet/
+kinhte/
 ├── app/
 │   ├── globals.css                # CSS typography & màu sắc Warm Paper
 │   ├── layout.tsx                 # Root layout & Google Fonts

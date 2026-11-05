@@ -7,8 +7,8 @@ const WIKI_REST_BASE = "https://vi.wikipedia.org/api/rest_v1";
 const WIKI_ACTION_BASE = "https://vi.wikipedia.org/w/api.php";
 
 const WIKI_HEADERS = {
-  "User-Agent": "SuVietExplorer/1.0 (https://suviet.dev; contact@suviet.dev)",
-  "Api-User-Agent": "SuVietExplorer/1.0 (https://suviet.dev; contact@suviet.dev)",
+  "User-Agent": "KinhTeExplorer/1.0 (https://kinhte.thich.in; contact@kinhte.thich.in)",
+  "Api-User-Agent": "KinhTeExplorer/1.0 (https://kinhte.thich.in; contact@kinhte.thich.in)",
   Accept: "application/json",
 };
 
@@ -76,7 +76,7 @@ export async function fetchWikiArticle(title: string): Promise<WikiArticle | nul
 }
 
 async function fetchWikiArticleCached(title: string): Promise<WikiArticle | null> {
-  return cached(`suviet:article:v2:${title}`, 60 * 60 * 24, async () => {
+  return cached(`kinhte:article:v3:${title}`, 60 * 60 * 24, async () => {
     const direct = await loadWikiArticle(title);
     if (direct) return direct;
 

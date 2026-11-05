@@ -1,0 +1,582 @@
+.eco {
+  --bg: #faf7f2;
+  --card: #fff;
+  --ink: #1f1b16;
+  --mute: #6f675c;
+  --line: #e3dccf;
+  --vn: #b3261e;
+  --wd: #2f5d8a;
+  --vnb: #f6dcd9;
+  --wdb: #d9e5f2;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-be-vietnam), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.eco *,
+.eco *::before,
+.eco *::after {
+  box-sizing: inherit;
+}
+
+.eco button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.eco-hd,
+.eco-main,
+.eco-ft,
+.eco .in {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.eco-hd {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.eco h1 {
+  font-family: var(--font-be-vietnam), system-ui, sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.eco-hd p {
+  margin: 6px 0 0;
+  color: var(--mute);
+  font-size: 14px;
+}
+
+.eco .stage {
+  position: sticky;
+  top: calc(4rem + env(safe-area-inset-top, 0px));
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0 14px;
+}
+
+.eco .row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.eco .year {
+  font-size: clamp(32px, 6vw, 46px);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.eco .steps {
+  display: flex;
+  gap: 4px;
+}
+
+.eco .steps button,
+.eco .chip {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 13px;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.eco .steps button:hover,
+.eco .chip:hover {
+  border-color: var(--vn);
+}
+
+.eco .chip.on {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.eco .ruler {
+  position: relative;
+  margin-top: 12px;
+  touch-action: none;
+  cursor: ew-resize;
+  user-select: none;
+  outline-offset: 3px;
+}
+
+.eco .dec {
+  position: relative;
+  height: 18px;
+  font-size: 11px;
+  color: var(--mute);
+}
+
+.eco .dec span {
+  position: absolute;
+  top: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 3px;
+  height: 18px;
+}
+
+.eco .lane {
+  position: relative;
+  height: 28px;
+  margin-top: 3px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.eco .lane i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-style: normal;
+  font-size: 11px;
+  line-height: 28px;
+  padding: 0 5px 0 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-left: 1px solid var(--bg);
+  color: var(--ink);
+}
+
+.eco .vn i:nth-child(odd) {
+  background: var(--vnb);
+}
+
+.eco .vn i:nth-child(even) {
+  background: color-mix(in srgb, var(--vnb) 60%, var(--vn) 18%);
+}
+
+.eco .wd i:nth-child(odd) {
+  background: var(--wdb);
+}
+
+.eco .wd i:nth-child(even) {
+  background: color-mix(in srgb, var(--wdb) 60%, var(--wd) 18%);
+}
+
+.eco .tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: #fff;
+}
+
+.eco .vn .tag {
+  background: var(--vn);
+}
+
+.eco .wd .tag {
+  background: var(--wd);
+}
+
+.eco .ph {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ink);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.eco .ph::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.eco .ctl {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.eco-main {
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+.eco .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 760px) {
+  .eco .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eco .card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  min-width: 0;
+  box-shadow: 0 8px 24px rgb(52 38 22 / 5%);
+}
+
+.eco .card.vn {
+  border-top-color: var(--vn);
+}
+
+.eco .card.wd {
+  border-top-color: var(--wd);
+}
+
+.eco .lab {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eco .vn .lab {
+  color: var(--vn);
+}
+
+.eco .wd .lab {
+  color: var(--wd);
+}
+
+.eco .reg {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 4px 0 0;
+  line-height: 1.3;
+}
+
+.eco .rng {
+  font-size: 13px;
+  color: var(--mute);
+  margin-bottom: 10px;
+}
+
+.eco .ev {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+  font-size: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.eco .ev:hover b {
+  text-decoration: underline;
+  text-decoration-color: var(--vn);
+  text-underline-offset: 3px;
+}
+
+.eco .ev em {
+  display: block;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--mute);
+}
+
+.eco .ev.now {
+  background: color-mix(in srgb, var(--ink) 5%, transparent);
+}
+
+.eco .none {
+  color: var(--mute);
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+}
+
+.eco .note {
+  grid-column: 1 / -1;
+  background: var(--card);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  padding: 16px 18px;
+  font-size: 15px;
+}
+
+.eco .note b {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 4px;
+}
+
+.eco .key {
+  margin-top: 22px;
+}
+
+.eco .key h2 {
+  font-size: 17px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.eco .keys {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.eco-ft {
+  padding-top: 12px;
+  padding-bottom: 32px;
+  color: var(--mute);
+  font-size: 12px;
+}
+
+.eco-detail {
+  --bg: #faf7f2;
+  --card: #fff;
+  --ink: #1f1b16;
+  --mute: #6f675c;
+  --line: #e3dccf;
+  --vn: #b3261e;
+  --wd: #2f5d8a;
+  min-height: calc(100vh - 8rem);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-be-vietnam), system-ui, sans-serif;
+}
+
+.eco-detail-header {
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(to bottom, #f3ece0, var(--bg));
+  padding: 36px 16px;
+}
+
+.eco-detail-header-inner,
+.eco-detail-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.eco-detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--mute);
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.eco-detail-back:hover {
+  color: var(--vn);
+}
+
+.eco-detail-kicker {
+  color: var(--vn);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.eco-detail h1 {
+  max-width: 850px;
+  font-family: var(--font-be-vietnam), system-ui, sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.2;
+  margin: 10px 0;
+  letter-spacing: -0.03em;
+}
+
+.eco-detail-lead {
+  color: var(--mute);
+  font-size: 16px;
+  max-width: 720px;
+  margin: 0;
+}
+
+.eco-detail-content {
+  padding: 28px 16px 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 24px;
+}
+
+.eco-detail-article,
+.eco-detail-aside {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgb(52 38 22 / 5%);
+}
+
+.eco-detail-article {
+  padding: clamp(20px, 4vw, 36px);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.eco-detail-summary {
+  margin-bottom: 28px;
+  padding: 16px 20px;
+  border-left: 4px solid var(--vn);
+  border-radius: 0 12px 12px 0;
+  background: #faf7f2;
+  color: var(--mute);
+  font-style: italic;
+}
+
+.eco-detail-prose {
+  color: var(--ink);
+}
+
+.eco-detail-source {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.eco-detail-source a,
+.eco-detail-unavailable a {
+  color: var(--vn);
+  text-underline-offset: 3px;
+}
+
+.eco-detail-unavailable {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  background: #faf7f2;
+}
+
+.eco-detail-unavailable h2 {
+  margin-top: 0;
+}
+
+.eco-detail-unavailable p {
+  margin-bottom: 12px;
+}
+
+.eco-detail-article h2 {
+  font-size: 21px;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.eco-detail-article p {
+  margin: 0 0 20px;
+}
+
+.eco-detail-article p:last-child {
+  margin-bottom: 0;
+}
+
+.eco-detail-aside {
+  padding: 20px;
+  align-self: start;
+}
+
+.eco-detail-aside h2 {
+  font-size: 13px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: var(--mute);
+}
+
+.eco-detail-aside dl {
+  margin: 0;
+}
+
+.eco-detail-aside dt {
+  color: var(--mute);
+  font-size: 12px;
+  margin-top: 14px;
+}
+
+.eco-detail-aside dd {
+  margin: 3px 0 0;
+  font-weight: 600;
+}
+
+.eco-detail-related {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 16px;
+}
+
+.eco-detail-related h3 {
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.eco-detail-related p {
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.eco-detail-related a {
+  display: block;
+  color: var(--vn);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.eco-detail-related a.eco-detail-toc-link {
+  color: var(--mute);
+  margin-top: 7px;
+}
+
+.eco-detail-related a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .eco-detail-header {
+    padding-top: 26px;
+    padding-bottom: 28px;
+  }
+
+  .eco-detail-content {
+    grid-template-columns: 1fr;
+  }
+}

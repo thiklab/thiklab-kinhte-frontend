@@ -15,7 +15,7 @@ export function yearTitle(year: number): string {
   const headline = yearHeadline(year);
   const withYear = headline && !headline.includes(String(Math.abs(year))) ? `${headline} (${formatYear(year)})` : headline;
   if (withYear && withYear.length <= 40) return withYear;
-  return `Sự kiện lịch sử ${yearLabel(year)}`;
+  return `Sự kiện năm ${yearLabel(year)}`;
 }
 
 export function regimeSummary(year: number) {

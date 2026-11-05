@@ -59,8 +59,8 @@ export async function fetchYearParallelEvents(year: number): Promise<ParallelTim
       `https://vi.wikipedia.org/w/api.php?action=parse&page=${year}&prop=wikitext&format=json&origin=*`,
       {
         headers: {
-          "User-Agent": "SuVietExplorer/1.0 (https://suviet.dev; contact@suviet.dev)",
-          "Api-User-Agent": "SuVietExplorer/1.0 (https://suviet.dev; contact@suviet.dev)",
+          "User-Agent": "KinhTeExplorer/1.0 (https://kinhte.thich.in; contact@kinhte.thich.in)",
+          "Api-User-Agent": "KinhTeExplorer/1.0 (https://kinhte.thich.in; contact@kinhte.thich.in)",
         },
         next: { revalidate: 86400 * 7 },
       }

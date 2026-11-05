@@ -16,7 +16,7 @@ const beVietnam = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Khám phá lịch sử Việt Nam theo mốc năm`,
+    default: `${SITE_NAME} — Đối chiếu kinh tế Việt Nam và thế giới theo mốc năm`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -61,7 +61,7 @@ export default function RootLayout({
         <footer className="border-t border-paper-300/40 py-8 bg-paper-100/50 text-center text-xs font-sans text-paper-800/60">
           <div className="max-w-8xl mx-auto px-4 space-y-2">
             <p className="font-serif font-medium text-paper-900">
-              Sử Việt Niên Biểu — Lịch sử Việt Nam dễ đọc, dễ hiểu
+              Kinh Tế Niên Biểu — Kinh tế Việt Nam và thế giới theo mốc thời gian
             </p>
             <p>
               Dữ liệu nội dung mở được trích xuất và chuẩn hóa từ Wikipedia tiếng Việt (giấy phép CC BY-SA 4.0).

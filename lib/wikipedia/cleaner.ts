@@ -6,9 +6,6 @@ export function cleanAndParseWikiHtml(rawHtml: string): { cleanHtml: string; toc
 
   // 1. Loại bỏ các bảng mẫu nhiễu, infobox, navbox, hộp cảnh báo
   const unwantedPatterns = [
-    /<table[^>]*class="[^"]*(infobox|navbox|metadata|ambox|vertical-navbox)[^"]*"[^>]*>[\s\S]*?<\/table>/gi,
-    /<div[^>]*class="[^"]*(navbox|hatnote|mw-empty-elt|reflist|portal)[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
-    /<div[^>]*id="[^"]*(toc|mw-navigation)[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
     /<sup[^>]*class="[^"]*\breference\b[^"]*"[^>]*>[\s\S]*?<\/sup>/gi,
     /<sup[^>]*class="[^"]*\bnoprint\b[^"]*"[^>]*>[\s\S]*?<\/sup>/gi,
     /<a[^>]*href="[^"]*#cite_(?:note|ref)[^"]*"[^>]*>[\s\S]*?<\/a>/gi,
@@ -19,6 +16,10 @@ export function cleanAndParseWikiHtml(rawHtml: string): { cleanHtml: string; toc
 
   html = removeBalancedTags(html, "span", /mw-editsection/);
   html = removeBalancedTags(html, "sup", /(^|\s)(mw-ref|reference)(\s|$)/);
+  // Khối lồng nhau phải xóa theo cặp thẻ cân bằng, regex không tham lam sẽ để lại thẻ đóng dư
+  html = removeBalancedTags(html, "table", /(infobox|navbox|metadata|ambox|vertical-navbox)/);
+  html = removeBalancedTags(html, "div", /(navbox|hatnote|mw-empty-elt|reflist|portal)/);
+  html = removeBalancedTags(html, "div", /^(toc|mw-navigation)/, "id");
 
   unwantedPatterns.forEach((pattern) => {
     html = html.replace(pattern, "");
@@ -63,7 +64,7 @@ export function cleanAndParseWikiHtml(rawHtml: string): { cleanHtml: string; toc
 
   html = removeBalancedTags(html, "span", /mw-editsection/);
 
-  return { cleanHtml: html, toc };
+  return { cleanHtml: balanceHtml(html), toc };
 }
 
 const escapeAttr = (s: string) =>
@@ -139,9 +140,9 @@ function removeUnwantedSections(html: string): string {
   return result + html.slice(cursor);
 }
 
-// Xóa thẻ (kể cả lồng nhau) có class khớp pattern, ví dụ "[sửa | sửa mã nguồn]"
-function removeBalancedTags(html: string, tag: string, classPattern: RegExp): string {
-  const openRe = new RegExp(`<${tag}\\b[^>]*\\bclass\\s*=\\s*["']([^"']*)["'][^>]*>`, "gi");
+// Xóa thẻ (kể cả lồng nhau) có class/id khớp pattern, ví dụ "[sửa | sửa mã nguồn]"
+function removeBalancedTags(html: string, tag: string, classPattern: RegExp, attr: "class" | "id" = "class"): string {
+  const openRe = new RegExp(`<${tag}\\b[^>]*\\b${attr}\\s*=\\s*["']([^"']*)["'][^>]*>`, "gi");
   const tokenRe = new RegExp(`<(/?)${tag}\\b[^>]*>`, "gi");
   let result = "";
   let cursor = 0;
@@ -165,4 +166,43 @@ function removeBalancedTags(html: string, tag: string, classPattern: RegExp): st
     openRe.lastIndex = end;
   }
   return result + html.slice(cursor);
+}
+
+const VOID_TAGS = new Set(["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"]);
+
+// Bỏ thẻ đóng thừa và đóng nốt thẻ còn mở để HTML luôn cân bằng,
+// nếu không trình duyệt sẽ phân tích khác server và gây lỗi hydration
+function balanceHtml(html: string): string {
+  const tagRe = /<(\/?)([a-zA-Z][a-zA-Z0-9]*)\b[^>]*?(\/?)>/g;
+  const stack: string[] = [];
+  let out = "";
+  let cursor = 0;
+  let m: RegExpExecArray | null;
+
+  while ((m = tagRe.exec(html))) {
+    const closing = m[1] === "/";
+    const name = m[2].toLowerCase();
+    if (VOID_TAGS.has(name) || m[3] === "/") continue;
+
+    if (!closing) {
+      stack.push(name);
+      continue;
+    }
+
+    const idx = stack.lastIndexOf(name);
+    if (idx === -1) {
+      out += html.slice(cursor, m.index);
+      cursor = m.index + m[0].length;
+      continue;
+    }
+    if (idx < stack.length - 1) {
+      const missing = stack.slice(idx + 1).reverse().map((t) => `</${t}>`).join("");
+      out += html.slice(cursor, m.index) + missing;
+      cursor = m.index;
+    }
+    stack.length = idx;
+  }
+
+  out += html.slice(cursor);
+  return out + stack.reverse().map((t) => `</${t}>`).join("");
 }

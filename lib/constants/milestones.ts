@@ -203,7 +203,7 @@ export const CURATED_MILESTONES: Record<number, ParallelTimelineEntry> = {
         title: "Cách mạng Tháng Tám & Khai sinh VNDCCH",
         description: "Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập tại Quảng trường Ba Đình ngày 2/9, chấm dứt hơn 80 năm đô hộ của thực dân Pháp và xóa bỏ chế độ quân chủ.",
         wikiTitle: "Tuyên ngôn độc lập Việt Nam",
-        tag: "Lịch sử hiện đại",
+        tag: "Bối cảnh hiện đại",
       },
     ],
     china: [
@@ -268,4 +268,3 @@ export const CURATED_MILESTONES: Record<number, ParallelTimelineEntry> = {
     ],
   },
 };
-

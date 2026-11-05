@@ -13,6 +13,10 @@ import {
 } from "@/lib/constants/timeline-data";
 
 const stripHtmlTags = (html: string) => html.replace(/<[^>]*>/g, "").trim();
+const formatUtcDate = (timestamp: string) => {
+  const date = new Date(timestamp);
+  return `${date.getUTCDate()}/${date.getUTCMonth() + 1}/${date.getUTCFullYear()}`;
+};
 
 interface ReaderViewProps {
   article: WikiArticle;
@@ -163,7 +167,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({ article }) => {
             <span>Quay lại dòng thời gian</span>
           </Link>
           <span className="text-xs font-mono uppercase tracking-widest text-crimson font-medium mb-3 block">
-            Tư liệu Lịch sử — Wikipedia Archive
+            Tư liệu tham khảo — Wikipedia
           </span>
           <h1 className="text-2xl sm:text-3xl lg:text-5xl font-serif text-paper-900 tracking-tight leading-tight mb-4 break-words">
             {article.displayTitle}
@@ -226,7 +230,7 @@ export const ReaderView: React.FC<ReaderViewProps> = ({ article }) => {
                   <>
                     {" "}Cập nhật lần cuối:{" "}
                     <time dateTime={article.summary.timestamp}>
-                      {new Date(article.summary.timestamp).toLocaleDateString("vi-VN")}
+                      {formatUtcDate(article.summary.timestamp)}
                     </time>
                     .
                   </>

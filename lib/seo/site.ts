@@ -1,13 +1,13 @@
-export const SITE_NAME = "Sử Việt Niên Biểu";
+export const SITE_NAME = "Kinh Tế Niên Biểu";
 
 export const SITE_DESCRIPTION =
-  "Đối chiếu lịch sử Việt Nam với Trung Quốc và thế giới theo từng mốc năm, kèm nội dung mở từ Wikipedia tiếng Việt trong không gian đọc tĩnh lặng.";
+  "Đối chiếu kinh tế Việt Nam với thế giới theo từng mốc năm từ Đổi Mới 1986 đến nay, kèm tư liệu tham khảo từ Wikipedia tiếng Việt.";
 
 const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-  (productionHost ? `https://${productionHost}` : "https://suviet.dev")
+  (productionHost ? `https://${productionHost}` : "https://kinhte.thich.in")
 ).replace(/\/+$/, "");
 
 // Ngày biên soạn nội dung tĩnh gần nhất; cập nhật khi sửa dữ liệu dòng thời gian

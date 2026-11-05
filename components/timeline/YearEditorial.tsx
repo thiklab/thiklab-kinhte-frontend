@@ -31,7 +31,7 @@ export function YearEditorial({ year, wiki }: Props) {
         {headline ? `${headline}. ` : ""}
         Vào năm {formatYear(year)}, Việt Nam đang ở giai đoạn <strong>{r.vn}</strong>, trong khi Trung Quốc thuộc giai đoạn{" "}
         <strong>{r.cn}</strong> và thế giới đang trải qua <strong>{r.wd}</strong>. Mốc năm này nằm trong giai đoạn{" "}
-        <Link prefetch={false} href={`/pathways#${era.id}`}>{era.name}</Link> của lịch sử Việt Nam ({era.timeRange}).
+        <Link prefetch={false} href={`/pathways#${era.id}`}>{era.name}</Link> ({era.timeRange}).
       </p>
 
       {curated && (
@@ -70,7 +70,7 @@ export function YearEditorial({ year, wiki }: Props) {
         <ul>
           {neighbors.map((y) => (
             <li key={y}>
-              <Link prefetch={false} href={timelineHref(y)}>So sánh lịch sử năm {formatYear(y)}</Link>
+              <Link prefetch={false} href={timelineHref(y)}>Đối chiếu năm {formatYear(y)}</Link>
             </li>
           ))}
           <li>

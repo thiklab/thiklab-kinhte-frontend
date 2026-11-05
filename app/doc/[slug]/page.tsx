@@ -35,7 +35,7 @@ export async function generateMetadata({ params, searchParams }: DocProps): Prom
     title: truncate(article.displayTitle, 40),
     description: fitDescription(
       article.summary?.extract || article.summary?.description || article.displayTitle,
-      "Tư liệu lịch sử Việt Nam từ Wikipedia tiếng Việt, trình bày trong không gian đọc tĩnh lặng.",
+      "Tư liệu tham khảo từ Wikipedia tiếng Việt, trình bày trong không gian đọc tĩnh lặng.",
       120,
       160
     ),

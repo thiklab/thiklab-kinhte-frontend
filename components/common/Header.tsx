@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Icon, type IconName } from "@/components/common/Icon";
 
 const isActiveLink = (pathname: string, href: string) =>
-  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`) || (href === "/doc/dai-viet" && pathname.startsWith("/doc"));
+  href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -18,9 +18,7 @@ export const Header: React.FC = () => {
 
   const navLinks: { href: string; label: string; icon: IconName }[] = [
     { href: "/", label: "Tổng quan", icon: "sparkles" },
-    { href: "/timeline", label: "Dòng thời gian", icon: "clock" },
-    { href: "/pathways", label: "Các Giai Đoạn", icon: "compass" },
-    { href: "/doc/dai-viet", label: "Đọc Bài Viết", icon: "book-open" },
+    { href: "/economy", label: "Kinh tế", icon: "compass" },
   ];
 
   return (
@@ -31,10 +29,10 @@ export const Header: React.FC = () => {
           <Icon name="logo" className="w-9 h-9 rounded-xl shadow-sm font-serif transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="font-serif font-bold text-base sm:text-lg text-paper-900 tracking-tight leading-none group-hover:text-crimson transition-colors">
-              Sử Việt Niên Biểu
+              Kinh Tế Niên Biểu
             </span>
             <span className="hidden sm:block text-[10px] font-sans uppercase tracking-widest text-paper-800/60 mt-0.5">
-              Historical Explorer
+              Economic Timeline
             </span>
           </div>
         </Link>
@@ -95,4 +93,3 @@ export const Header: React.FC = () => {
     </header>
   );
 };
-

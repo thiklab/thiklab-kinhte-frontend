@@ -1,8 +1,8 @@
 {
-  "name": "suviet",
+  "name": "kinhte",
   "version": "1.0.0",
   "private": true,
-  "description": "Ứng dụng khám phá Lịch sử Việt Nam hiện đại, tối giản và chuyên nghiệp với nguồn dữ liệu mở từ Wikipedia",
+  "description": "Ứng dụng đối chiếu kinh tế Việt Nam và thế giới theo mốc thời gian, kèm nguồn dữ liệu mở từ Wikipedia",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

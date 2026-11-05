@@ -35,7 +35,7 @@ export async function renderOg({ title, eyebrow, subtitle }: OgArgs) {
         }}
       >
         <div style={{ display: "flex", fontSize: 28, color: "#9B1C1C", fontWeight: 700, letterSpacing: 2 }}>
-          {(eyebrow ?? "NIÊN BIỂU LỊCH SỬ").toUpperCase()}
+          {(eyebrow ?? "NIÊN BIỂU KINH TẾ").toUpperCase()}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: size, fontWeight: 700, lineHeight: 1.15 }}>{title}</div>

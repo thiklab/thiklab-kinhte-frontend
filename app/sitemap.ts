@@ -5,6 +5,8 @@ import { DOC_REGISTRY } from "@/lib/seo/articles";
 import { CONTENT_LAST_MODIFIED, absoluteUrl } from "@/lib/seo/site";
 import { INDEXED_YEARS } from "@/lib/seo/years";
 import { yearPath } from "@/lib/seo/yearMeta";
+import { ECO_E } from "@/lib/constants/economy-data";
+import { economyEventHref } from "@/lib/seo/economy";
 
 export const revalidate = 86400;
 
@@ -45,6 +47,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: absoluteUrl("/"), lastModified: base, changeFrequency: "monthly", priority: 1 },
     { url: absoluteUrl("/pathways"), lastModified: base, changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/economy"), lastModified: base, changeFrequency: "monthly", priority: 0.7 },
+    ...ECO_E.map((event) => ({
+      url: absoluteUrl(economyEventHref(event)),
+      lastModified: base,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
     ...INDEXED_YEARS.map((y) => ({
       url: absoluteUrl(yearPath(y)),
       lastModified: base,

@@ -6,14 +6,14 @@ import { fetchWikiSummary } from "@/lib/wikipedia/client";
 export const runtime = "nodejs";
 export const size = OG_SIZE;
 export const contentType = "image/png";
-export const alt = "Tư liệu lịch sử Việt Nam";
+export const alt = "Tư liệu tham khảo từ Wikipedia";
 
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
   const title = await resolveDocTitle((await params).slug);
   const summary = title ? await fetchWikiSummary(title) : null;
   return renderOg({
-    eyebrow: "Tư liệu lịch sử",
-    title: summary?.displayTitle ?? "Tư liệu lịch sử Việt Nam",
+    eyebrow: "Tư liệu tham khảo",
+    title: summary?.displayTitle ?? "Tư liệu từ Wikipedia",
     subtitle: summary?.description ? truncate(summary.description, 120) : undefined,
   });
 }

@@ -10,5 +10,5 @@ export const hasWikiYear = (year: number) => year >= 1 && year <= 2026;
 
 export const getYearEntry = cache(async (year: number): Promise<ParallelTimelineEntry | null> => {
   if (!hasWikiYear(year)) return null;
-  return cached(`suviet:year:v1:${year}`, TTL_SECONDS, () => fetchYearParallelEvents(year));
+  return cached(`kinhte:year:v1:${year}`, TTL_SECONDS, () => fetchYearParallelEvents(year));
 });

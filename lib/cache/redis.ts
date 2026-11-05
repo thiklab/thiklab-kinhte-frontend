@@ -75,7 +75,7 @@ export async function cached<T>(
   return isEmpty ? null : value;
 }
 
-const SLUG_MAP_KEY = "suviet:slugmap:v1";
+const SLUG_MAP_KEY = "kinhte:slugmap:v1";
 
 // Ánh xạ slug -> tiêu đề Wikipedia gốc (slug bỏ dấu nên không thể suy ngược bằng tìm kiếm)
 export async function getSlugTitle(slug: string): Promise<string | null> {

@@ -5,7 +5,7 @@ import { cached, getSlugTitle } from "@/lib/cache/redis";
 import { searchWikiTitles } from "@/lib/wikipedia/client";
 import { slugify } from "./slug";
 
-const EXTRA_TITLES = ["Đại Việt", "Lịch sử Việt Nam", "Bắc thuộc", "Nhà Lý", "Nhà Trần", "Nhà Lê sơ", "Nhà Nguyễn"];
+const EXTRA_TITLES = ["Đại Việt", "Bắc thuộc", "Nhà Lý", "Nhà Trần", "Nhà Lê sơ", "Nhà Nguyễn"];
 
 const curatedTitles = Object.values(CURATED_MILESTONES).flatMap((entry) =>
   [...entry.vietnam, ...entry.china, ...entry.world].map((ev) => ev.wikiTitle)
@@ -34,7 +34,7 @@ export const resolveDocTitle = cache(async (slug: string, hint?: string): Promis
   if (remembered) return remembered;
 
   return cached<string>(
-    `suviet:slug:v1:${slug}`,
+    `kinhte:slug:v1:${slug}`,
     60 * 60 * 24 * 7,
     async () => {
       const results = await searchWikiTitles(slug.replace(/-/g, " "), 10);
